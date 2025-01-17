@@ -17,6 +17,7 @@ You can then initialise it in your textadept's init.lua. Here's an example:
 ```
 -- File Browser Module
 local file_browser = require('file_browser')
+-- Ctrl+Shift+o to open directory
 keys['ctrl+O'] = file_browser.init
 table.insert(textadept.menu.menubar[_L['File']], 3, {
     'Open Directory...', file_browser.init
@@ -32,3 +33,8 @@ file_browser.case_insensitive_sort = true
 The colours depend on keywords defined by Textadept's [lexer tags](https://orbitalquark.github.io/textadept/api.html#lexer).
 You can modify them in the "highlight_folder" function.
 
+## Use in the TUI version.
+
+When using the "Open Directory" option in the terminal (you might need to use Run Command Dialog as Ctrl-Shift+o will not be detected as different to Ctrl+o) you have to append a '.' to folder name to make it open. E.g.
+
+`/home/myuser/dev/myprojectfolder.`
